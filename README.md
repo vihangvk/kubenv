@@ -1,6 +1,6 @@
 # kubenv - Work on multiple Kubernetes clusters/namespaces in interactive shell
 
-kubenv enables working on differrent Kuberntes clusters/namespaces by setting separate contexts for each interactive shell sessions.
+kubenv enables working on different Kubernetes clusters/namespaces by setting separate contexts for each interactive shell sessions.
 
 ## Using
 
@@ -16,7 +16,7 @@ Then you can set/view kubectl context/namespace as below:
 $ kubenv
 kubenv allows to set kubectl context/namespace for current shell session.
 You can also persist changes using 'save' command.
-Remeber to 'save' changes if you add new context (i.e. connect to new cluster).
+Remember to 'save' changes if you add new context (i.e. connect to new cluster).
 
 Usage: kubenv (context|ctx)|(namespace|ns)|save|reload [(cur|current)|all|<value-to-set>]
 
@@ -39,10 +39,10 @@ reload
       - reloads kubectl config from ${HOME}/.kube/config
 ```
 
-You may also use it to show current context/namespace in your Bash propmt like:
+You may also use it to show current context/namespace in your Bash prompt like:
 
 ```bash
-PS1='\W [$(kubenv ctx)|$(kubenv ns)]\$'
+PS1='\W [$(kubenv ctx cur)|$(kubenv ns cur)]\$'
 ```
 
 ## Limitations

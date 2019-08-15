@@ -7,7 +7,7 @@ function _kubenv_usage()
 {
     echo "kubenv allows to set kubectl context/namespace for current shell session."
     echo "You can also persist changes using 'save' command."
-    echo "Remeber to 'save' changes if you add new context (i.e. connect to new cluster)."
+    echo "Remember to 'save' changes if you add new context (i.e. connect to new cluster)."
     echo
     echo "Usage: kubenv (context|ctx)|(namespace|ns)|save|reload [(cur|current)|all|<value-to-set>]"
     echo
