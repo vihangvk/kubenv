@@ -18,18 +18,27 @@ kubenv allows to set kubectl context/namespace for current shell session.
 You can also persist changes using 'save' command.
 Remember to 'save' changes if you add new context (i.e. connect to new cluster).
 
-Usage: kubenv (context|ctx)|(namespace|ns)|save|reload [(cur|current)|all|<value-to-set>]
+Usage:
+      kubenv [use [on|off]]|save|reload
+      kubenv [(contexts|ctx)|(namespaces|ns)] [(cur|current)|all|-|<value-to-set>]
 
 Sub-commands:
 
-context | ctx
+use
+      - on - enables kubenv
+      - off - disables kubenv
+      - (no argument) - toggles kubenv
+
+contexts | ctx
       - With no argument | all - lists all contexts
       - cur | current - lists current context
+      - - (hyphen) - switch to previous context
       - any other argument sets context to that value
 
-namespace | ns
+namespaces | ns
       - With no argument | all - lists all namespaces
       - cur | current - lists current namespaces
+      - - (hyphen) - switch to previous namespace
       - any other argument sets namespace to that value
 
 save
@@ -37,6 +46,12 @@ save
 
 reload
       - reloads kubectl config from ${HOME}/.kube/config
+```
+
+You need to enable `kubenv` before you can use it:
+
+```bash
+kubenv use
 ```
 
 You may also use it to show current context/namespace in your Bash prompt like:
