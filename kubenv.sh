@@ -134,7 +134,7 @@ function _kubenv_ns()
     current_namespace=$(${KUBENV_KUBECTL} config view --output="jsonpath={.contexts[?(@.name==\"${current_context}\")].context.namespace}")
     case "${1}" in
         ""|all) 
-            for c in $(${KUBENV_KUBECTL} get namespace --output="jsonpath={range.items[\*]}{.metadata.name}:{end}"|tr ':' '\n')
+            for c in $(${KUBENV_KUBECTL} get namespace --output="jsonpath={range.items[*]}{.metadata.name}:{end}"|tr ':' '\n')
             do
                 if [[ "${c}" == "${current_namespace}" ]]
                 then
